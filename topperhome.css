@@ -40,16 +40,27 @@ iframe {
 iframe:hover {
     transform: scale(1.05);
 }
-
-li a {
+li {
+    font-family: 'Hahmlet', sans-serif;
     font-size: 1.2em;
-    text-decoration: none;
     color: #333;
-    transition: color 0.3s ease-in-out;
+    list-style-type: none;
+    margin-top: 10px;
 }
 
+li a {
+    font-family: 'Hahmlet', sans-serif;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    font-size: 1.2em;
+
+
+}
+
+
 li a:hover {
-    color: #4caf50;
+    color: #29782b;
 }
 
 /* 제작인원 텍스트 스타일 */
