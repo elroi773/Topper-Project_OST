@@ -1,11 +1,136 @@
-body{
+/* 기본 레이아웃 스타일 */
+body {
+    margin: 0;
+    font-family: 'Hahmlet', sans-serif;
+    background-color: #ededff;
+    color: #333;
     text-align: center;
 }
 
-h1{
-    text-emphasis-color: red;
-    margin: none;
+h1.home {
+    font-size: 3em;
+    color: #4c63af; /* 시각적인 포인트 색상 */
+    margin-top: 50px;
+    text-shadow: 20px;
+}
+
+nav.menu {
+    margin: 20px 0;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.row div {
+    margin: 0 15px;
+}
+
+iframe {
+    width: 350px;
     height: 200px;
-    text-shadow: tomato;
-    background-color: rgb(55, 81, 184);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+iframe:hover {
+    transform: scale(1.05);
+}
+
+li a {
+    font-size: 1.2em;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease-in-out;
+}
+
+li a:hover {
+    color: #4caf50;
+}
+
+/* 제작인원 텍스트 스타일 */
+h5 {
+    color: #777;
+    font-weight: 300;
+    margin: 50px 0;
+}
+
+a {
+    font-size: 1.5em;
+    color: #4caf50;
+    text-decoration: none;
+}
+
+/* 푸터 전체 스타일 */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-family: 'Hahmlet', sans-serif;
+}
+
+/* 푸터 내부 컨테이너 */
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 푸터 섹션 스타일 */
+.footer-section {
+    margin: 10px;
+}
+
+.footer-section p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.footer-section a {
+    color: #4caf50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #66bb6a;
+}
+
+/* SNS 아이콘 스타일 */
+.social-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+    filter: invert(1); /* 아이콘을 흰색으로 변환 */
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+    }
+}
+
+/* 모바일 반응형 디자인 */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+
+    iframe {
+        width: 90%;
+        height: 180px;
+    }
 }
