@@ -224,7 +224,9 @@ button:active {
 .character:hover .description {
     opacity: 1;
 }
-
+.diviframe{
+    padding-top: 10px;
+}
 .iframe {
     width: 100%;
     height: 500px;
@@ -278,4 +280,76 @@ button:active {
 
 .h3{
     color:#103b19;
+}
+
+.line {
+    width: 80%;
+    height: 2px;
+    background-color: #aaa;
+    margin: 30px auto; /* 가운데 정렬 및 상단 여백 */
+    position: relative; /* 문서의 흐름에 따라 라인 배치 */
+}
+
+
+.polaroid-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; /* 사진 간의 간격을 넓힘 */
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.polaroid {
+    position: relative;
+    background-color: white;
+    padding: 15px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 250px; /* 폴라로이드의 고정 너비 */
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.polaroid img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.polaroid:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.caption {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #555;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* 폴라로이드가 걸린 것처럼 보이도록 하는 핀 */
+.polaroid::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: #555;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* 폴라로이드가 줄에 연결된 줄 */
+.string {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    width: 2px;
+    height: 15px;
+    background-color: #555;
+    transform: translateX(-50%);
 }
