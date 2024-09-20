@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 클릭 시 오디오 재생</title>
+</head>
+<body>
+    <h1>사진을 클릭하면 노래가 나와요!</h1>
+    
+    <!-- 이미지 -->
+    <img src="images/stopit_qweenost.png" alt="사진" style="cursor: pointer;" onclick="playAudio()">
+
+    <!-- 오디오 -->
+    <audio id="myAudio">
+        <source src="audio/stopit.mp3" type="audio/mpeg">
+        <!-- 브라우저가 오디오 지원 안 할 때 -->
+        당신의 브라우저는 오디오 요소를 지원하지 않습니다.
+    </audio>
+
+    <script>
+        function playAudio() {
+            var audio = document.getElementById("myAudio");
+            audio.play();
+        }
+    </script>
+</body>
+</html>
