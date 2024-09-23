@@ -14,8 +14,55 @@ h1.home {
     text-shadow: 20px;
 }
 
-nav.menu {
-    margin: 20px 0;
+/* 전체 메뉴의 스타일 */
+a.menu {
+    display: block;
+    padding: 10px 20px;
+    background-color: #4cae4f; /* 김이레님이 좋아하는 초록색 */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+a.menu:hover {
+    background-color: #3a9240;
+}
+
+/* 네비게이션 메뉴의 스타일 */
+nav.textmenu {
+    display: flex;
+    justify-content: center; /* 가로로 가운데 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    gap: 10px; /* 각 링크 간 간격 조정 */
+}
+
+/* 링크 스타일 */
+nav.textmenu a {
+    padding: 12px 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+    border-radius: 4px;
+}
+
+/* hover 효과 */
+nav.textmenu a:hover {
+    color: white;
+    background-color: #4cae4f;
+    transform: scale(1.05); /* hover 시 살짝 확대 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 약간의 그림자 효과 */
+}
+
+/* 마지막 빈 span은 숨김 처리 */
+nav.textmenu span {
+    display: none;
 }
 
 .row {
