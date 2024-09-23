@@ -8,14 +8,13 @@ body {
     scrollbar-color: #888 #f1f1f1; /* 손잡이와 트랙 색상 */
     scrollbar-width: thin;         /* 스크롤바 두께 설정 */
 }
-
 section {
-    height: 900px; 
-    width: 100%; /* 너비를 화면 전체로 설정 */
-    background-image: url("images/thatyear.png");
-    background-size: cover; 
-    background-position: center; 
-    background-attachment: fixed; /* 배경 이미지 고정 */
+  height: 900px; 
+  width: 100%; /* 너비를 화면 전체로 설정 */
+  background-image: url("images/seeumy19thlifemain.jpg");
+  background-size: cover; 
+  background-position: center; 
+  background-attachment: fixed; /* 배경 이미지 고정 */
 }
 button {
     size: 300px;
