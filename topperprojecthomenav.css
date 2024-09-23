@@ -5,16 +5,53 @@ body{
     min-height: 100vh;
     background-color: black;
 }
-nav{
-    position: relative;
-    width: 475px;
-    height: 50px;
-    background: #222;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* 전체 메뉴의 스타일 */
+a.menu {
+    display: block;
+    padding: 10px 20px;
+    background-color: #4cae4f; /* 김이레님이 좋아하는 초록색 */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
 }
+
+a.menu:hover {
+    background-color: #3a9240;
+}
+
+/* 네비게이션 메뉴의 스타일 */
+nav.textmenu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+}
+
+/* 링크 스타일 */
+nav.textmenu a {
+    margin: 5px 0;
+    padding: 8px 12px;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 4px;
+}
+
+nav.textmenu a:hover {
+    color: white;
+    background-color: #4cae4f;
+}
+
+/* 마지막 빈 span은 숨김 처리 */
+nav.textmenu span {
+    display: none;
+}
+
 nav a {
     position: relative;
     display: inline-block;
