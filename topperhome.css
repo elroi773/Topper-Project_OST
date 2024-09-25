@@ -1,7 +1,14 @@
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* 기본 레이아웃 스타일 */
 body {
     margin: 0;
-    font-family: 'Hahmlet', sans-serif;
+    font-family: 'GmarketSansMedium';
     background-color: #ededff;
     color: #333;
     text-align: center;
@@ -13,12 +20,22 @@ h1.home {
     margin-top: 50px;
     text-shadow: 20px;
 }
+.textexplain{
+    font-size: small;
+    color:#2b3b6f;
+    text-shadow: 30%;
+}
 
+.textexplain2{
+    font-size: smaller;
+    color:#2b3b6f;
+    text-shadow: 30%;
+}
 /* 전체 메뉴의 스타일 */
 a.menu {
     display: block;
     padding: 10px 20px;
-    background-color: #4cae4f; /* 김이레님이 좋아하는 초록색 */
+    background-color: #4c63af; /* 김이레님이 좋아하는 초록색 */
     color: white;
     text-align: center;
     text-decoration: none;
@@ -27,7 +44,7 @@ a.menu {
 }
 
 a.menu:hover {
-    background-color: #3a9240;
+    background-color: #4c63af;
 }
 
 /* 네비게이션 메뉴의 스타일 */
@@ -36,7 +53,7 @@ nav.textmenu {
     justify-content: center; /* 가로로 가운데 정렬 */
     align-items: center; /* 세로 중앙 정렬 */
     padding: 10px;
-    background-color: #f4f4f4;
+    background-color: #ededff;
     border-radius: 5px;
     gap: 10px; /* 각 링크 간 간격 조정 */
 }
@@ -55,7 +72,7 @@ nav.textmenu a {
 /* hover 효과 */
 nav.textmenu a:hover {
     color: white;
-    background-color: #4cae4f;
+    background-color: #4c63af;
     transform: scale(1.05); /* hover 시 살짝 확대 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 약간의 그림자 효과 */
 }
@@ -75,8 +92,13 @@ nav.textmenu span {
 .row div {
     margin: 0 15px;
 }
-
+.space{
+    height: 150px;
+}
 iframe {
+    scrollbar-color: #f8f5d6;
+    overflow-y: hidden;
+    overflow-x: hidden;
     width: 350px;
     height: 200px;
     border-radius: 10px;
@@ -88,7 +110,7 @@ iframe:hover {
     transform: scale(1.05);
 }
 li {
-    font-family: 'Hahmlet', sans-serif;
+    font-family: 'GmarketSansMedium';
     font-size: 1.2em;
     color: #333;
     list-style-type: none;
@@ -96,13 +118,11 @@ li {
 }
 
 li a {
-    font-family: 'Hahmlet', sans-serif;
+    font-family: 'GmarketSansMedium';
     color: #333;
     text-decoration: none;
     transition: color 0.3s ease-in-out;
     font-size: 1.2em;
-
-
 }
 
 
@@ -110,68 +130,12 @@ li a:hover {
     color: #29782b;
 }
 
-/* 제작인원 텍스트 스타일 */
-h5 {
-    color: #777;
-    font-weight: 300;
-    margin: 50px 0;
+.history{
+    color:#4c63af;
 }
-
-a {
-    font-size: 1.5em;
-    color: #4caf50;
-    text-decoration: none;
-}
-
-/* 푸터 전체 스타일 */
-footer {
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    font-family: 'Hahmlet', sans-serif;
-}
-
-/* 푸터 내부 컨테이너 */
-.footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* 푸터 섹션 스타일 */
-.footer-section {
-    margin: 10px;
-}
-
-.footer-section p {
-    margin: 0;
-    font-size: 0.9em;
-}
-
-.footer-section a {
-    color: #4caf50;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-section a:hover {
-    color: #66bb6a;
-}
-
-/* SNS 아이콘 스타일 */
-.social-icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
-    vertical-align: middle;
-    filter: invert(1); /* 아이콘을 흰색으로 변환 */
+.mecontainer{
+    float: right;
+    margin-right: 200px;
 }
 
 /* 반응형 디자인 */
