@@ -328,7 +328,9 @@ button:active {
     color: #555;
     font-family: 'Times New Roman', Times, serif;
 }
-
+.polaroidbackground{
+    background: url(images/thatyyearsectionbackground.jpg);
+}
 /* 폴라로이드가 걸린 것처럼 보이도록 하는 핀 */
 .polaroid::before {
     content: "";
