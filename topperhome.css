@@ -135,7 +135,12 @@ li a:hover {
 }
 .mecontainer{
     float: right;
-    margin-right: 200px;
+    margin-right: 150px;
+}
+.minchaecontainer{
+    padding-bottom: 40px;
+    float:left;
+    margin-right: 10px;
 }
 
 /* 반응형 디자인 */
