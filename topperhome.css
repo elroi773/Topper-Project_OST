@@ -130,19 +130,6 @@ li a:hover {
     color: #29782b;
 }
 
-.history{
-    color:#4c63af;
-}
-.mecontainer{
-    float: right;
-    margin-right: 150px;
-}
-.minchaecontainer{
-    padding-bottom: 40px;
-    float:left;
-    margin-right: 10px;
-}
-
 /* 반응형 디자인 */
 @media (max-width: 768px) {
     .footer-container {
