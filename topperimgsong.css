@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'iceJaram-Rg';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/iceJaram-Rg.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    font-family: 'iceJaram-Rg';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+    font-family: 'iceJaram-Rg';
+}
+
+.container {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+img {
+    width: 300px;
+    cursor: pointer;
+    transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
+    border-radius: 20px;
+}
+
+img:hover {
+    transform: scale(1.05) rotate(3deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    filter: brightness(1.2) saturate(1.5);
+}
+
+/* 설명 스타일 */
+.description {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    max-width: 300px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    margin-left: 20px; /* 이미지와 설명 사이 간격 */
+}
+
+.show-description {
+    opacity: 1;
+}
