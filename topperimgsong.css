@@ -4,6 +4,22 @@
     font-weight: normal;
     font-style: normal;
 }
+.container {
+    position: relative;
+    display: inline-block;
+    margin-right: -30px; /* 사진이 겹치는 정도를 조절하는 값 */
+}
+
+.container img {
+    width: 200px; /* 이미지 크기 */
+    height: auto;
+    border-radius: 20px; /* 둥근 모서리 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+}
+.container img:hover {
+    transform: scale(1.05); /* 호버 시 확대 */
+    transition: transform 0.3s ease-in-out;
+}
 body {
     font-family: 'iceJaram-Rg';
     display: flex;
@@ -39,7 +55,9 @@ img:hover {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
     filter: brightness(1.2) saturate(1.5);
 }
-
+.move-down {
+    transform: translateY(200px);
+}
 /* 설명 스타일 */
 .description {
     opacity: 0;
@@ -52,6 +70,15 @@ img:hover {
     margin-left: 20px; /* 이미지와 설명 사이 간격 */
 }
 
+#description,
+#description2,
+#description3,
+#description4,
+#description5 {
+    opacity: 0; /* 처음에 보이지 않게 설정 */
+    transition: opacity 0.5s ease-in-out; /* 부드러운 전환 효과 추가 */
+}
+
 .show-description {
-    opacity: 1;
+    opacity: 1; /* show-description 클래스가 추가될 때 보이도록 설정 */
 }
