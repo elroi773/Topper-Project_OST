@@ -22,7 +22,6 @@
 }
 body {
     font-family: 'iceJaram-Rg';
-    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -81,4 +80,8 @@ img:hover {
 
 .show-description {
     opacity: 1; /* show-description 클래스가 추가될 때 보이도록 설정 */
+}
+
+#description5{
+    margin-top: 3px;
 }
