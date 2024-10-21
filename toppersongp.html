@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사진 클릭 시 노래 재생</title>
+    <style>
+        .container {
+            position: relative; /* 요소들을 겹치기 위해 상대 위치 사용 */
+            width: 220px;
+            margin: 0 15px; /* 각 컨테이너 간의 간격 */
+            display: inline-block; /* 요소들이 가로로 나열되도록 설정 */
+        }
+
+        img {
+            width: 220px; /* 이미지 크기를 일정하게 설정 */
+            height: auto;
+            border-radius: 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05) rotate(3deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            filter: brightness(1.2) saturate(1.5);
+        }
+
+        /* 다른 이미지 위에 겹치도록 z-index를 설정 */
+        .container:nth-child(1) img {
+            z-index: 1;
+        }
+
+        .container:nth-child(2) img {
+            z-index: 2;
+            left: -40px; /* 이전 이미지 위로 조금 겹치게 설정 */
+        }
+
+        .container:nth-child(3) img {
+            z-index: 3;
+            left: -80px;
+        }
+
+        .container:nth-child(4) img {
+            z-index: 4;
+            left: -120px;
+        }
+
+        .container:nth-child(5) img {
+            z-index: 5;
+            left: -160px;
+        }
+
+        body {
+            font-family: 'iceJaram-Rg';
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="images/stopit_qweenost.png" alt="첫 번째 이미지" id="playMusic1">
+    </div>
+
+    <!-- 두 번째 이미지 -->
+    <div class="container">
+        <img src="images/amibroken_qweenost.png" alt="두 번째 이미지" id="playMusic2">
+    </div>
+
+    <!-- 세 번째 이미지 -->
+    <div class="container">
+        <img src="images/imsorryihateyouiloveu_qweenost.png" alt="세 번째 이미지" id="playMusic3">
+    </div>
+
+    <!-- 네 번째 이미지 -->
+    <div class="container">
+        <img src="images/diary_qweenost.png" alt="네 번째 이미지" id="playMusic4">
+    </div>
+
+    <!-- 다섯 번째 이미지 -->
+    <div class="container">
+        <img src="images/willumarryme_qweenost.png" alt="다섯 번째 이미지" id="playMusic5">
+    </div>
+
+    <script src="topperimgsong.js"></script>
+</body>
+</html>
