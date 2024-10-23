@@ -4,84 +4,89 @@
     font-weight: normal;
     font-style: normal;
 }
-.container {
-    position: relative;
-    display: inline-block;
-    margin-right: -30px; /* 사진이 겹치는 정도를 조절하는 값 */
-}
 
-.container img {
-    width: 200px; /* 이미지 크기 */
-    height: auto;
-    border-radius: 20px; /* 둥근 모서리 */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
-}
-.container img:hover {
-    transform: scale(1.05); /* 호버 시 확대 */
-    transition: transform 0.3s ease-in-out;
-}
+/* 전체적인 body 스타일 */
 body {
     font-family: 'iceJaram-Rg';
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background-color: #f0f0f0;
+    margin: 0;
+    overflow: hidden; /* 화면을 넘어가는 요소들 감추기 */
 }
 
-.body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #f0f0f0;
-    font-family: 'iceJaram-Rg';
+/* 가로로 겹치는 이미지를 위한 부모 컨테이너 */
+.overlap-container {
+    position: relative;
+    width: 1000px; /* 부모 컨테이너 너비 */
+    height: 350px; /* 부모 컨테이너 높이 */
+    margin: auto;
 }
 
+/* 각 이미지와 설명이 들어가는 컨테이너 */
 .container {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 20px;
+    position: absolute; /* 절대 위치로 배치 */
+    top: 0;
+    left: 0; /* 기본 위치를 0으로 */
+    margin: 0;
+    text-align: center;
+    transition: left 1s ease-in-out; /* 이동 애니메이션 */
 }
 
-img {
-    width: 300px;
+/* 이미지 스타일 */
+.container img {
+    width: 250px; /* 고정 너비 */
+    height: 350px; /* 고정 높이 */
+    object-fit: cover; /* 이미지가 컨테이너 크기에 맞춰 자름 */
+    border-radius: 20px; /* 둥근 모서리 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
     cursor: pointer;
     transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
-    border-radius: 20px;
 }
 
-img:hover {
+/* 이미지 호버 효과 */
+.container img:hover {
     transform: scale(1.05) rotate(3deg);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
     filter: brightness(1.2) saturate(1.5);
 }
-.move-down {
-    transform: translateY(200px);
-}
-/* 설명 스타일 */
+
+/* 설명글이 들어가는 div */
 .description {
     opacity: 0;
-    transition: opacity 0.5s ease;
-    max-width: 300px;
+    transition: opacity 0.5s ease-in-out;
+    max-width: 250px;
     background-color: #fff;
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    margin-left: 20px; /* 이미지와 설명 사이 간격 */
+    margin-top: 10px;
+    position: relative;
+    z-index: 1;
 }
 
-#description,
-#description2,
-#description3,
-#description4,
-#description5 {
-    opacity: 0; /* 처음에 보이지 않게 설정 */
-    transition: opacity 0.5s ease-in-out; /* 부드러운 전환 효과 추가 */
-}
-
+/* 설명이 보일 때 */
 .show-description {
-    opacity: 1; /* show-description 클래스가 추가될 때 보이도록 설정 */
+    opacity: 1;
 }
 
-#description5{
-    margin-top: 3px;
+/* 가로로 겹치는 이미지를 위해 left와 z-index 조정 */
+.container:nth-child(1) {
+    z-index: 3;
+    left: 0; /* 첫 번째 사진의 위치 */
+}
+.container:nth-child(2) {
+    z-index: 2;
+    left: 150px; /* 두 번째 사진의 위치 (겹침) */
+}
+.container:nth-child(3) {
+    z-index: 1;
+    left: 300px; /* 세 번째 사진의 위치 (겹침) */
+}
+
+
+.p{
+    margin-left:5px;
 }
