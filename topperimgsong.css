@@ -4,7 +4,6 @@
     font-weight: normal;
     font-style: normal;
 }
-
 /* 전체적인 body 스타일 */
 body {
     font-family: 'iceJaram-Rg';
@@ -14,37 +13,37 @@ body {
     height: 100vh;
     background-color: #f0f0f0;
     margin: 0;
-    overflow: hidden; /* 화면을 넘어가는 요소들 감추기 */
+    overflow: hidden;
 }
 
-/* 가로로 겹치는 이미지를 위한 부모 컨테이너 */
+/* 이미지를 가로로 나열하는 부모 컨테이너 */
 .overlap-container {
-    position: relative;
-    width: 1000px; /* 부모 컨테이너 너비 */
-    height: 350px; /* 부모 컨테이너 높이 */
+    display: flex;
+    gap: 10px; /* 이미지 간 간격 */
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    height: 100%;
     margin: auto;
 }
 
 /* 각 이미지와 설명이 들어가는 컨테이너 */
 .container {
-    position: absolute; /* 절대 위치로 배치 */
-    top: 0;
-    left: 0; /* 기본 위치를 0으로 */
-    margin: 0;
     text-align: center;
-    transition: left 1s ease-in-out; /* 이동 애니메이션 */
+    transition: transform 0.5s ease;
+    cursor: pointer;
 }
 
-/* 이미지 스타일 */
+/* 이미지 컨테이너 */
 .container img {
-    width: 250px; /* 고정 너비 */
-    height: 350px; /* 고정 높이 */
-    object-fit: cover; /* 이미지가 컨테이너 크기에 맞춰 자름 */
-    border-radius: 20px; /* 둥근 모서리 */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
-    cursor: pointer;
+    width: 200px; /* 너비를 고정 */
+    height: 300px; /* 높이를 고정 */
+    object-fit: cover; /* 이미지 비율을 유지하며 잘리도록 설정 */
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
 }
+
 
 /* 이미지 호버 효과 */
 .container img:hover {
@@ -72,21 +71,12 @@ body {
     opacity: 1;
 }
 
-/* 가로로 겹치는 이미지를 위해 left와 z-index 조정 */
-.container:nth-child(1) {
-    z-index: 3;
-    left: 0; /* 첫 번째 사진의 위치 */
+/* p 요소의 왼쪽 여백 */
+.p {
+    margin-left: 5px;
 }
-.container:nth-child(2) {
-    z-index: 2;
-    left: 150px; /* 두 번째 사진의 위치 (겹침) */
-}
-.container:nth-child(3) {
-    z-index: 1;
-    left: 300px; /* 세 번째 사진의 위치 (겹침) */
-}
-
-
-.p{
-    margin-left:5px;
+.gallery {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
 }
