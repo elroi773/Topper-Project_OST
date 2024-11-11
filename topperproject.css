@@ -330,9 +330,12 @@ button:active {
 }
 .polaroidbackground{
     background: url(images/thatyyearsectionbackground.jpg);
+    background-repeat : no-repeat;
+    background-size : cover;
 }
 /* 폴라로이드가 걸린 것처럼 보이도록 하는 핀 */
 .polaroid::before {
+    padding-top:30px;
     content: "";
     position: absolute;
     top: -15px;
