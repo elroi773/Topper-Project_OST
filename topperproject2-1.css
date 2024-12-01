@@ -1,3 +1,181 @@
+<<<<<<< HEAD
+@font-face {
+    font-family: 'iceJaram-Rg';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/iceJaram-Rg.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+    font-family: 'iceJaram-Rg';
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* 스크롤 시 위쪽 정렬 */
+    height: 100%; /* 스크롤 가능하도록 */
+    background-color: #f0f0f0;
+    margin: 0;
+    overflow: auto; /* 스크롤 활성화 */
+    height: 5000px;
+    background-color: #f8f5d6;
+    text-align: center;
+    font-family: 'Diphylleia', sans-serif; /* 기본 폰트 적용 */
+}
+
+section {
+    height: 900px; 
+    width: 100%; /* 너비를 화면 전체로 설정 */
+    background-image: url("images/Qeenwedding.jpg");
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; /* 배경 이미지 고정 */
+}
+
+h1{
+    color: #797f26;
+}
+
+button {
+    size: 300px;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 30px;
+    background: linear-gradient(45deg, #797f26, #b4eeb4);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    color: rgb(250, 255, 192);
+    font-size: 18px;
+    font-family: 'Gowun Batang', serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, transform 0.3s;
+}
+.link{
+    text-align: center;
+    font-size: 20px;
+}
+
+.iframe {
+    width: 100%;
+    max-width: 1000px;
+    height: 500px;
+    border: 3px solid #ddd; /* 테두리 색상 */
+    border-radius: 8px; /* 둥근 모서리 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 */
+    overflow: hidden; /* 내용이 테두리를 넘지 않게 */
+    background-color: #f9f9f9; /* 배경 색상 */
+    transition: transform 0.3s ease; /* 호버 효과를 위한 전환 */
+}
+
+.iframe:hover {
+    transform: scale(1.02); /* 호버 시 확대 효과 */
+    border-color: #bbb; /* 호버 시 테두리 색상 변경 */
+}
+.imgp{
+    padding: 150px;
+    font-size: 50px;
+    color:#fffacf;
+    background-image: url("images/Qeenwedding2.png");
+    /*background-size:  50px 50px;*/
+    background-position: 200px;
+}
+.imagescontainer{
+    width: 20px;
+    height: 30px;
+}
+.left-img {
+    float: left; /* 이미지 왼쪽으로 배치 */
+    margin-right: 10px; /* 이미지와 다른 요소 사이에 간격 추가 */
+}
+.text{
+    color:#4b4f13;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding-top: 20px;
+    font-size: 40px;
+}
+.picturer2{
+    float: right; /* 이미지 왼쪽으로 배치 */
+    margin-right: 10px; 
+}
+.text2{
+    color: #4b4f13;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding-top: 20px;
+    font-size: 35px;
+}
+
+.textimgcontainer{
+    width: 1000px;
+    height: 5000px;
+}
+
+
+
+/* 이미지를 가로로 나열하는 부모 컨테이너 */
+.gallery {
+    display: flex; /* 가로 정렬 */
+    gap: 20px; /* 이미지 간 간격 */
+    justify-content: center; /* 중앙 정렬 */
+    align-items: center; /* 세로 가운데 정렬 */
+    flex-wrap: wrap; /* 화면 크기 초과 시 줄바꿈 */
+    padding: 20px; /* 스크롤 여유 공간 추가 */
+}
+
+/* 각 이미지와 설명이 들어가는 컨테이너 */
+.container {
+    display: flex; /* 이미지와 설명을 가로로 배치 */
+    flex-direction: row; /* 기본 가로 정렬 */
+    align-items: center; /* 세로 가운데 정렬 */
+    gap: 10px; /* 이미지와 설명 사이 간격 */
+    text-align: left; /* 설명글 왼쪽 정렬 */
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+/* 이미지 스타일 */
+.container img {
+    width: 200px; /* 이미지 고정 너비 */
+    height: 300px; /* 이미지 고정 높이 */
+    object-fit: cover; /* 이미지 비율 유지 */
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
+}
+
+/* 이미지 호버 효과 */
+.container img:hover {
+    transform: scale(1.05) rotate(3deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    filter: brightness(1.2) saturate(1.5);
+}
+
+/* 설명글 스타일 */
+.p {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    max-width: 200px; /* 설명글 최대 너비 축소 */
+    background-color: #fff;
+    padding: 10px; /* 안쪽 여백 축소 */
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    font-size: 12px; /* 글씨 크기 축소 */
+    margin: 0; /* 불필요한 여백 제거 */
+    position: relative;
+    z-index: 1;
+    line-height: 1.4; /* 줄 간격 조정 */
+}
+
+/* 설명글이 보이는 상태 */
+.p.show-description {
+    opacity: 1;
+}
+
+/* 클릭된 상태에서 이미지 이동 */
+.container.clicked img {
+    transform: translateY(100px); /* 이미지가 아래로 이동 */
+    transition: transform 0.5s ease;
+}
+=======
 body {
     margin: 0;
     height: 5000px;
@@ -92,3 +270,4 @@ button {
     width: 1000px;
     height: 5000px;
 }
+>>>>>>> cb64393e1e42688c116a889ab4bbde235afa4006
