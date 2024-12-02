@@ -44,3 +44,34 @@
     }
 
     setInterval(sliderEffect, sliderInterval);
+
+    const containers = document.querySelectorAll('.container');
+
+        containers.forEach(container => {
+            const img = container.querySelector('img');
+            const audio = container.querySelector('audio');
+            const description = container.querySelector('.p');
+
+            img.addEventListener('click', () => {
+                // 다른 컨테이너 초기화
+                containers.forEach(c => {
+                    if (c !== container) {
+                        c.classList.remove('clicked');
+                        const otherAudio = c.querySelector('audio');
+                        otherAudio.pause();
+                        otherAudio.currentTime = 0;
+                    }
+                });
+
+                // 현재 컨테이너 상태 토글
+                container.classList.toggle('clicked');
+
+                // 오디오 재생/일시정지
+                if (container.classList.contains('clicked')) {
+                    audio.play();
+                } else {
+                    audio.pause();
+                    audio.currentTime = 0;
+                }
+            });
+        });
