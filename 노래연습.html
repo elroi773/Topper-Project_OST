@@ -1,153 +1,152 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>사진 클릭 시 노래 재생</title>
     <style>
+        @font-face {
+            font-family: 'S-CoreDream-3Light';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         body {
+            font-family: 'S-CoreDream-3Light';
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
+            align-items: flex-start;
+            margin: 0;
             background-color: #f0f0f0;
         }
 
+        .gallery {
+            display: flex;
+            gap: 30px;
+            padding: 20px;
+        }
+
         .container {
-            display: flex;
-            align-items: flex-start; /* 설명이 사진과 같은 라인에 있도록 설정 */
-            gap: 20px; /* 사진과 설명 사이 간격 */
-            transition: transform 0.5s ease; /* 전체 컨테이너에 애니메이션 적용 */
-        }
-
-        img {
-            width: 300px;
+            position: relative;
             cursor: pointer;
-            transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
-            border-radius: 20px;
+            text-align: left;
         }
 
-        img:hover {
-            transform: scale(1.0) rotate(3deg); /* 약간의 회전 */
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); /* 그림자 효과 */
-            filter: brightness(1.2) saturate(1.5); /* 밝기와 채도를 증가 */
+        .container img {
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease;
         }
 
-        .move-down {
-            transform: translateY(200px); /* 전체 컨테이너가 내려감 */
+        .container.clicked img {
+            transform: translateY(150px);
         }
 
-        /* 설명 스타일 */
-        #description {
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            max-width: 300px;
-            background-color: #fff;
-            padding: 20px;
+        .description {
+            position: absolute;
+            top: 200px;
+            left: 220px;
+            width: 250px;
+            background-color: white;
             border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            font-size: 14px;
+            line-height: 1.5;
+            display: none;
         }
 
-        /* 설명이 보일 때 */
-        .show-description {
-            opacity: 1;
-        }
-
-        /* 두 번째 컨테이너 스타일 */
-        .container2 {
-            display: flex;
-            align-items: flex-start; /* 설명이 사진과 같은 라인에 있도록 설정 */
-            gap: 20px; /* 사진과 설명 사이 간격 */
-            transition: transform 0.5s ease; /* 전체 컨테이너에 애니메이션 적용 */
-            margin-top: 50px; /* 첫 번째 컨테이너와 간격 조정 */
-        }
-
-        #description2 {
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            max-width: 300px;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        .container.clicked .description {
+            display: block;
         }
     </style>
 </head>
+
 <body>
-
-    <h1>사진을 클릭하면 노래가 재생됩니다.</h1>
-
-    <div class="container" id="flexContainer1">
-        <img src="images/stopit_qweenost.png" alt="첫 번째 이미지" id="playMusic1">
-        <div id="description">
-            <p>필연적으로 사랑은 애정과 증오를 동반한다<br>
-            종종 이 사실은 비극처럼 느껴지기도 하지만 <br>
-            불을 껴안은 얼음처럼, 결말을 안다 해도<br>
-            그 사랑을 멈출 수는 없었을 것 같다<br><br>
-            Inevitably, love carries affection <br>
-            and hate. Sometimes this fact feels tragic,<br>
-            like fire that hugs ice, even knowing the ending of the <br>
-            story, the love will not stop.</p>
+    <div class="gallery">
+        <!-- 첫 번째 -->
+        <div class="container">
+            <img src="images/image1.jpg" alt="첫 번째 이미지">
+            <div class="description">
+                <h3>멈춰줘 - 헤이즈</h3>
+                <p>필연적으로 사랑은 애정과 증오를 동반한다...</p>
+            </div>
+            <audio src="audio/song1.mp3"></audio>
+        </div>
+        <!-- 두 번째 -->
+        <div class="container">
+            <img src="images/image2.jpg" alt="두 번째 이미지">
+            <div class="description">
+                <h3>고장난걸까 - 10CM</h3>
+                <p>사랑은 보이지도, 들리지도, 손에 잡히지도 않기에...</p>
+            </div>
+            <audio src="audio/song2.mp3"></audio>
+        </div>
+        <!-- 세 번째 -->
+        <div class="container">
+            <img src="images/image3.jpg" alt="세 번째 이미지">
+            <div class="description">
+                <h3>미안해 미워해 사랑해 - Crush</h3>
+                <p>왜 하필 이때가 떠올랐을까...</p>
+            </div>
+            <audio src="audio/song3.mp3"></audio>
+        </div>
+        <!-- 네 번째 -->
+        <div class="container">
+            <img src="images/image4.jpg" alt="네 번째 이미지">
+            <div class="description">
+                <h3>일기 - 김나영</h3>
+                <p>일기를 통해 우리는 지나간 기억을 더욱 선명하게...</p>
+            </div>
+            <audio src="audio/song4.mp3"></audio>
+        </div>
+        <!-- 다섯 번째 -->
+        <div class="container">
+            <img src="images/image5.jpg" alt="다섯 번째 이미지">
+            <div class="description">
+                <h3>청혼 - 김수현</h3>
+                <p>타오르는 석양처럼 충만한 기쁨 속에서...</p>
+            </div>
+            <audio src="audio/song5.mp3"></audio>
         </div>
     </div>
-
-    <audio id="music1" src="audio/stopit.mp3"></audio>
-
-    <!-- 두 번째 컨테이너 추가 -->
-    <div class="container2" id="flexContainer2">
-        <img src="images/amibroken_qweenost.png" alt="두 번째 이미지" id="playMusic2">
-        <div id="description2">
-            <p>두 번째 사진 설명입니다.<br>
-            이 사진은 다른 노래와 함께합니다.<br>
-            다른 내용이 여기에 들어갑니다.</p>
-        </div>
-    </div>
-
-    <audio id="music2" src="audio/amibroken.mp3"></audio>
 
     <script>
-        // 첫 번째 이미지 클릭 이벤트
-        const img1 = document.getElementById('playMusic1');
-        const audio1 = document.getElementById('music1');
-        const description1 = document.getElementById('description');
-        const flexContainer1 = document.getElementById('flexContainer1');
+        const containers = document.querySelectorAll('.container');
 
-        img1.addEventListener('click', function() {
-            // 음악 재생/일시정지
-            if (audio1.paused) {
-                audio1.play();
-            } else {
-                audio1.pause();
-            }
+        containers.forEach(container => {
+            const img = container.querySelector('img');
+            const audio = container.querySelector('audio');
+            const description = container.querySelector('.description');
 
-            // 사진과 설명이 같이 밑으로 이동하는 애니메이션 적용
-            flexContainer1.classList.toggle('move-down');
+            img.addEventListener('click', () => {
+                // 모든 컨테이너 초기화
+                containers.forEach(c => {
+                    c.classList.remove('clicked');
+                    const otherAudio = c.querySelector('audio');
+                    otherAudio.pause();
+                    otherAudio.currentTime = 0;
+                });
 
-            // 설명 보이기/숨기기
-            description1.style.opacity = description1.style.opacity === "0" || description1.style.opacity === "" ? "1" : "0";
-        });
+                // 현재 컨테이너 상태 토글
+                container.classList.toggle('clicked');
 
-        // 두 번째 이미지 클릭 이벤트
-        const img2 = document.getElementById('playMusic2');
-        const audio2 = document.getElementById('music2');
-        const description2 = document.getElementById('description2');
-        const flexContainer2 = document.getElementById('flexContainer2');
-
-        img2.addEventListener('click', function() {
-            // 음악 재생/일시정지
-            if (audio2.paused) {
-                audio2.play();
-            } else {
-                audio2.pause();
-            }
-
-            // 사진과 설명이 같이 밑으로 이동하는 애니메이션 적용
-            flexContainer2.classList.toggle('move-down');
-
-            // 설명 보이기/숨기기
-            description2.style.opacity = description2.style.opacity === "0" || description2.style.opacity === "" ? "1" : "0";
+                // 오디오 재생/일시정지
+                if (container.classList.contains('clicked')) {
+                    audio.play();
+                } else {
+                    audio.pause();
+                    audio.currentTime = 0;
+                }
+            });
         });
     </script>
-    
 </body>
+
 </html>
+     
