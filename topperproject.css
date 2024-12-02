@@ -1,46 +1,65 @@
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 body {
     margin: 0;
-    border:10px;
+    border: 10px;
     height: 5000px;
     background-color: #f8f5d6;
     text-align: center;
-    font-family: 'Diphylleia', sans-serif; /* 기본 폰트 적용 */
-    scrollbar-color: #888 #f1f1f1; /* 손잡이와 트랙 색상 */
-    scrollbar-width: thin;         /* 스크롤바 두께 설정 */
+    font-family: 'Diphylleia', sans-serif;
+    /* 기본 폰트 적용 */
+    scrollbar-color: #888 #f1f1f1;
+    /* 손잡이와 트랙 색상 */
+    scrollbar-width: thin;
+    /* 스크롤바 두께 설정 */
 }
 
 section {
-    height: 900px; 
-    width: 100%; /* 너비를 화면 전체로 설정 */
+    height: 900px;
+    width: 100%;
+    /* 너비를 화면 전체로 설정 */
     background-image: url("images/thatyear.png");
-    background-size: cover; 
-    background-position: center; 
-    background-attachment: fixed; /* 배경 이미지 고정 */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* 배경 이미지 고정 */
 }
 
 h1 {
-    font-family: 'Diphylleia', sans-serif; /* h1에 폰트 적용 */
+    font-family: 'Diphylleia', sans-serif;
+    /* h1에 폰트 적용 */
     color: #7b9441;
 }
 
 p {
     color: #455f12;
 }
-h3{
-    padding-top:350px;
-    color:#30420d;
+
+h3 {
+    padding-top: 350px;
+    color: #30420d;
     text-shadow: #425125;
 }
-.interview{
+
+.interview {
     padding-top: 20px;
-    
+
 }
-.text4{
+
+.text4 {
     padding-top: 100px;
     padding-left: 50px;
-    float:left;
     font-size: 20px;
+    margin-bottom: 30px;
+    text-align: center;
 }
+
 button {
     size: 300px;
     display: block;
@@ -68,26 +87,32 @@ button:active {
 
 .content-wrapper {
     display: flex;
-    justify-content: center; /* 중앙 정렬 */
+    justify-content: center;
+    /* 중앙 정렬 */
     align-items: center;
-    gap: 10px; /* 캐릭터 간의 간격 조정 */
+    gap: 10px;
+    /* 캐릭터 간의 간격 조정 */
     margin: 20px;
 }
 
 .character {
     position: relative;
     text-align: center;
-    width: 25%; /* 각 캐릭터의 너비, 크기를 더 줄임 */
+    width: 25%;
+    /* 각 캐릭터의 너비, 크기를 더 줄임 */
 }
 
 .character-img {
-    max-width: 70%; /* 이미지 크기를 더 줄임 */
+    max-width: 70%;
+    /* 이미지 크기를 더 줄임 */
     height: auto;
-    transition: transform 0.3s; /* 이미지 확대 애니메이션 */
+    transition: transform 0.3s;
+    /* 이미지 확대 애니메이션 */
 }
 
 .character-text {
-    margin-top: 10px; /* 텍스트 위 여백 */
+    margin-top: 10px;
+    /* 텍스트 위 여백 */
 }
 
 .description {
@@ -96,124 +121,83 @@ button:active {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 180px; /* 설명 텍스트 박스 너비 조정 */
+    width: 180px;
+    /* 설명 텍스트 박스 너비 조정 */
     padding: 10px;
     background-color: rgba(250, 255, 192, 0.9);
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     opacity: 0;
-    transition: opacity 0.5s ease-in-out; /* 투명도 변화 애니메이션 */
-}
-.question{
-    background-color:#aec384;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: large;
-    text-align: start;
-    text-shadow: #30420d;
-}
-.question p {
-    font-size: 18px;
-    font-weight: bold;
-    color: #103b19;
-    margin-bottom: 10px;
-}
-.pictureinterview1st{
-    float: right;
-    border-radius: 25%;
-    width: 50%; /* 사진 너비를 50%로 설정 */
-    height: auto; /* 비율에 맞게 자동으로 높이 조정 */
-    margin-right: 10px; /* 오른쪽 여백을 추가 */
+    transition: opacity 0.5s ease-in-out;
+    /* 투명도 변화 애니메이션 */
 }
 
-/* 답변 컨테이너 스타일 */
-.gooksanswer {
-    background-color: #fdffc6; 
-    border-radius: 8px;
-    padding: 10px 15px; /* 최소한의 여백 */
-    display: inline-block; /* 텍스트 크기에 맞춰 박스 크기 조정 */
-    color: #e3e4db; /* 밝은 그레이시 화이트 */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
-    line-height: 1.6; /* 텍스트 간격 조정 */
-    margin-left: 30px;
-}
-
-/* 인용문 스타일 */
-.gooksanswer .quote {
-    font-size: 18px;
-    font-weight: 500;
-    margin: 0;
-    color: #dce1b5; /* 부드러운 연두색 톤 */
-}
-
-/* 저자 이름 스타일 */
-.gooksanswer .author {
-    font-size: 14px;
-    font-weight: 400;
-    text-align: right;
-    margin-top: 8px;
-    color: #b5c59e; /* 부드러운 올리브 그린 */
-}
-/* 답변 컨테이너 스타일 */
-.wonganswer {
-    background-color: #fdffc6; 
-    border-radius: 8px;
-    padding: 10px 15px; /* 최소한의 여백 */
-    display: inline-block; /* 텍스트 크기에 맞춰 박스 크기 조정 */
-    color: #e3e4db; /* 밝은 그레이시 화이트 */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
-    line-height: 1.6; /* 텍스트 간격 조정 */
-}
-
-/* 인용문 스타일 */
-.wonganswer .quote {
-    font-size: 18px;
-    font-weight: 500;
-    margin: 0;
-    color: #dce1b5; /* 부드러운 연두색 톤 */
-}
-
-/* 저자 이름 스타일 */
-.wonganswer .author {
-    font-size: 14px;
-    font-weight: 400;
-    text-align: right;
-    margin-top: 8px;
-    color: #b5c59e; /* 부드러운 올리브 그린 */
-}
-
-/* 이미지 컨테이너 스타일 */
-.image-container {
+/* 인터뷰 전체 섹션 */
+.interview {
     display: flex;
-    justify-content: center; /* 중앙 정렬 */
-    gap: 10px; /* 이미지 간의 간격 조정 */
-    flex-wrap: wrap; /* 필요 시 줄 바꿈 허용 */
+    flex-direction: row; /* 사진과 텍스트를 가로로 정렬 */
+    align-items: center; /* 사진과 텍스트 수직 가운데 정렬 */
+    gap: 20px; /* 사진과 텍스트 사이 간격 */
+    background-color: #faf7e9; /* 부드러운 베이지 배경 */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
+    margin: 20px auto; /* 중앙 정렬 */
+    max-width: 600px; /* 적절한 크기 설정 */
 }
 
-/* 이미지 기본 스타일 */
+/* 이미지 컨테이너 */
+.image-container {
+    flex-shrink: 0; /* 이미지 크기 고정 */
+    width: 150px; /* 고정된 이미지 크기 */
+    height: 150px;
+    border-radius: 8px; /* 둥근 모서리 */
+    overflow: hidden; /* 이미지가 컨테이너를 넘지 않도록 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
+}
+
 .image-container img {
-    width: 45%; /* 이미지의 폭을 부모 컨테이너의 폭의 45%로 설정 */
-    height: auto; /* 비율을 유지하며 자동 높이 조정 */
-    max-width: 300px; /* 이미지의 최대 폭 설정 */
-    border-radius: 8px; /* 선택 사항: 모서리 둥글게 처리 */
-    object-fit: cover; /* 이미지 비율 유지 및 잘림 방지 */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 이미지 비율 유지 */
 }
 
+/* 텍스트 컨테이너 */
+.container1 {
+    font-family: 'S-CoreDream-3Light';
 
-#description-goook {
-    left: -200px; /* 국연수 설명 텍스트를 왼쪽에 배치 */
-    text-align: left; /* 텍스트 정렬 */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* 답변 간 간격 */
 }
 
-#description-choyoung {
-    right: -200px; /* 최웅 설명 텍스트를 오른쪽에 배치 */
-    text-align: left; /* 텍스트 정렬 */
+/* 공통 답변 스타일 */
+.gooksanswer, .wonganswer {
+    background-color: #eaf8da; /* 연한 초록 톤 */
+    border-radius: 8px;
+    padding: 10px;
+    color: #4a5a31; /* 어두운 초록 텍스트 */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
+    font-family: 'Georgia', serif;
+    font-size: 14px; /* 적당한 글씨 크기 */
+    line-height: 1.6;
 }
+
+/* 인용문 강조 */
+.gooksanswer p:first-of-type, .wonganswer p:first-of-type {
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* 저자 이름 */
+.gooksanswer p:last-of-type, .wonganswer p:last-of-type {
+    text-align: right;
+    font-size: 12px;
+    font-weight: 500;
+    color: #78914a;
+}
+
 
 /* 마우스 오버 시 이미지 확대 */
 .character:hover .character-img {
@@ -224,77 +208,97 @@ button:active {
 .character:hover .description {
     opacity: 1;
 }
-.diviframe{
+
+.diviframe {
     padding-top: 10px;
 }
+
 .iframe {
     width: 100%;
     height: 500px;
     border: none;
-    border-radius: 8px; /* 둥근 모서리 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 */
-    overflow: hidden; /* 내용이 테두리를 넘지 않게 */
-    background-color: #f9f9f9; /* 배경 색상 */
-    transition: transform 0.3s ease; /* 호버 효과를 위한 전환 */
-  }
-.iframe:hover {
-    transform: scale(1.02); /* 호버 시 확대 효과 */
-    border-color: #bbb; /* 호버 시 테두리 색상 변경 */
+    border-radius: 8px;
+    /* 둥근 모서리 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* 그림자 */
+    overflow: hidden;
+    /* 내용이 테두리를 넘지 않게 */
+    background-color: #f9f9f9;
+    /* 배경 색상 */
+    transition: transform 0.3s ease;
+    /* 호버 효과를 위한 전환 */
 }
 
-  iframe::-webkit-scrollbar {
-    width: 12px; /* 스크롤바 너비 */
-  }
-  
-  iframe::-webkit-scrollbar-thumb {
-    background-color: darkgrey; /* 스크롤바 핸들 색상 */
-    border-radius: 10px; /* 스크롤바 핸들의 모서리를 둥글게 */
-  }
-  
-  iframe::-webkit-scrollbar-track {
-    background: #f1f1f1; /* 스크롤바 트랙 색상 */
-    border-radius: 10px;
-  }
-  .info{
-    font-size: 18px;
-    color:#103b19;
-  }
+.iframe:hover {
+    transform: scale(1.02);
+    /* 호버 시 확대 효과 */
+    border-color: #bbb;
+    /* 호버 시 테두리 색상 변경 */
+}
 
-  .firstlovebackground1{
+iframe::-webkit-scrollbar {
+    width: 12px;
+    /* 스크롤바 너비 */
+}
+
+iframe::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    /* 스크롤바 핸들 색상 */
+    border-radius: 10px;
+    /* 스크롤바 핸들의 모서리를 둥글게 */
+}
+
+iframe::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* 스크롤바 트랙 색상 */
+    border-radius: 10px;
+}
+
+.info {
+    font-size: 18px;
+    color: #103b19;
+}
+
+.firstlovebackground1 {
     float: right;
     border-radius: 20px;
-    width:450px;
-    height:250px;
-  }
-  .firstlovebackground2{
+    width: 450px;
+    height: 250px;
+}
+
+.firstlovebackground2 {
     float: left;
     border-radius: 20px;
-    width:450px;
-    height:250px;
-  }
-  .firstlovebackground3{
-    border-radius: 20px;
-    width:450px;
-    height:250px;
-  }
+    width: 450px;
+    height: 250px;
+}
 
-.h3{
-    color:#103b19;
+.firstlovebackground3 {
+    border-radius: 20px;
+    width: 450px;
+    height: 250px;
+}
+
+.h3 {
+    color: #103b19;
 }
 
 .line {
     width: 80%;
     height: 2px;
     background-color: #aaa;
-    margin: 30px auto; /* 가운데 정렬 및 상단 여백 */
-    position: relative; /* 문서의 흐름에 따라 라인 배치 */
+    margin: 30px auto;
+    /* 가운데 정렬 및 상단 여백 */
+    position: relative;
+    /* 문서의 흐름에 따라 라인 배치 */
 }
 
 
 .polaroid-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px; /* 사진 간의 간격을 넓힘 */
+    gap: 30px;
+    /* 사진 간의 간격을 넓힘 */
     justify-content: center;
     margin-top: 50px;
 }
@@ -306,7 +310,8 @@ button:active {
     border: 1px solid #ddd;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 250px; /* 폴라로이드의 고정 너비 */
+    width: 250px;
+    /* 폴라로이드의 고정 너비 */
     text-align: center;
     font-family: 'Arial', sans-serif;
 }
@@ -328,14 +333,16 @@ button:active {
     color: #555;
     font-family: 'Times New Roman', Times, serif;
 }
-.polaroidbackground{
+
+.polaroidbackground {
     background: url(images/thatyyearsectionbackground.jpg);
-    background-repeat : no-repeat;
-    background-size : cover;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
 /* 폴라로이드가 걸린 것처럼 보이도록 하는 핀 */
 .polaroid::before {
-    padding-top:30px;
+    padding-top: 30px;
     content: "";
     position: absolute;
     top: -15px;
@@ -359,52 +366,100 @@ button:active {
     transform: translateX(-50%);
 }
 
-.poster{
-    padding-top:20px;
-
+section {
+    margin-bottom: 50px;
 }
 
-#poster{
-    width: 30px;
-    height: 50px;
-}
-
-
-/* 배경 그라디언트 */
-#footer {
-    background: linear-gradient(to bottom, #2c2f3e, #1a1c26);
-    color: white;
-    padding: 50px 20px;
+.poster {
+    flex: 1;
+    /* 포스터 영역이 콘텐츠를 차지하도록 */
+    margin: 50px auto;
     text-align: center;
+    /* 중앙 정렬 */
+}
+
+.posterimg {
+    width: 400px;
+    height: 550px;
+    margin-bottom: 20px;
+}
+
+.content {
+    flex: 1;
+    /* 다른 콘텐츠 영역 */
+}
+
+footer {
+    font-family: 'GowunBatang-Regular';
+    background-color: #f4f2db;
+    color: #2e7d32;
+    text-align: center;
+    padding: 20px 10px;
     font-family: 'Arial', sans-serif;
+    border-top: 0.4px solid #302d21;
+    margin-top: auto;
+    /* 푸터를 항상 페이지 아래로 */
 }
 
-/* 텍스트 스타일 */
-#footer h1 {
-    font-size: 2rem;
-    color: #ffd700; /* 부드러운 황금빛 */
-    text-shadow: 0 2px 10px rgba(255, 215, 0, 0.6);
-    margin-bottom: 10px;
+footer p {
+    font-family: 'GowunBatang-Regular';
+    margin: 5px 0;
+    font-size: 16px;
 }
 
-#footer p {
-    font-size: 1rem;
-    color: #d3d3d3;
-}
-
-/* 아이콘 애니메이션 */
-.glow-icon {
+footer a {
+    font-family: 'GowunBatang-Regular';
     display: inline-block;
-    font-size: 1.5rem;
-    animation: glow 1.5s infinite alternate;
+    margin: 10px 0;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    background-color: #2c3e2c;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-@keyframes glow {
-    from {
-        text-shadow: 0 0 5px #00bcd4, 0 0 15px #00bcd4;
-    }
-    to {
-        text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
-    }
+footer a:hover {
+    background-color: #388e3c;
 }
 
+.footer-info {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #5d4037;
+}
+
+@font-face {
+    font-family: 'GowunBatang-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.logo {
+    float: right;
+    margin-top: 200px;
+    margin-right: 200px;
+}
+
+.netflix {
+    width: 200px;
+    height: 200px;
+    margin-right: 20px;
+}
+
+.tving {
+    width: 200px;
+    height: 200px;
+}
+
+.logo img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
