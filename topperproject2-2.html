@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>눈물의 여왕</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Diphylleia&display=swap" rel="stylesheet">
+
+    <style>
+        @font-face {
+            font-family: 'S-CoreDream-3Light';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            margin: 0;
+            height: 5000px;
+            background-color: #f8f5d6;
+            text-align: center;
+            font-family: 'Diphylleia', sans-serif;
+            /* 기본 폰트 적용 */
+        }
+
+
+
+        section {
+            height: 900px;
+            width: 100%;
+            /* 너비를 화면 전체로 설정 */
+            background-image: url("images/Qeenwedding.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            /* 배경 이미지 고정 */
+        }
+
+        h1 {
+            color: #797f26;
+        }
+
+        button {
+            size: 300px;
+            display: block;
+            margin: 20px auto;
+            padding: 10px 30px;
+            background: linear-gradient(45deg, #797f26, #b4eeb4);
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            color: rgb(250, 255, 192);
+            font-size: 18px;
+            font-family: 'Gowun Batang', serif;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .link {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .iframe {
+            width: 100%;
+            max-width: 1000px;
+            height: 500px;
+            border: 3px solid #ddd;
+            /* 테두리 색상 */
+            border-radius: 8px;
+            /* 둥근 모서리 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* 그림자 */
+            overflow: hidden;
+            /* 내용이 테두리를 넘지 않게 */
+            background-color: #f9f9f9;
+            /* 배경 색상 */
+            transition: transform 0.3s ease;
+            /* 호버 효과를 위한 전환 */
+        }
+
+        .iframe:hover {
+            transform: scale(1.02);
+            /* 호버 시 확대 효과 */
+            border-color: #bbb;
+            /* 호버 시 테두리 색상 변경 */
+        }
+
+        .imgp {
+            padding: 150px;
+            font-size: 50px;
+            color: #fffacf;
+            background-image: url("images/Qeenwedding2.png");
+            /*background-size:  50px 50px;*/
+            background-position: 200px;
+        }
+
+        .imagescontainer {
+            width: 20px;
+            height: 30px;
+        }
+
+        .left-img {
+            float: left;
+            /* 이미지 왼쪽으로 배치 */
+            margin-right: 10px;
+            /* 이미지와 다른 요소 사이에 간격 추가 */
+        }
+
+        .text {
+            color: #4b4f13;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            padding-top: 20px;
+            font-size: 40px;
+        }
+
+        .picturer2 {
+            float: right;
+            /* 이미지 왼쪽으로 배치 */
+            margin-right: 10px;
+        }
+
+        .text2 {
+            color: #4b4f13;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            padding-top: 20px;
+            font-size: 35px;
+        }
+
+        .textimgcontainer {
+            width: 100%;
+            height: 550px;
+            margin-bottom: 20px;
+        }
+
+        .gallery {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.5s ease;
+        }
+
+        .container img {
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
+        }
+
+        .container.clicked img {
+            transform: translateY(300px);
+        }
+
+        .p {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            max-width: 500px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            font-size: 12px;
+            text-align: left;
+            line-height: 1.4;
+            position: absolute;
+            top: 300px;
+            width: 500px;
+            left: 250px;
+        }
+
+        .container.clicked .p {
+            opacity: 1;
+        }
+
+        h1 {
+            font-family: 'S-CoreDream-3Light';
+        }
+
+        .posterimg {
+            float: left;
+            margin-top: 50px;
+            border-radius: 10px;
+            margin-left: 200px;
+        }
+
+        .logo {
+            float: right;
+            margin-top: 200px;
+            margin-right: 200px;
+        }
+
+        .netflix {
+            width: 200px;
+            height: 200px;
+            margin-right: 20px;
+        }
+
+        .tving {
+            width: 200px;
+            height: 200px;
+        }
+
+        .logo img {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .logo img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <section></section>
+    <h1>눈물의 여왕</h1>
+
+    <button class="button">Play Main OST</button>
+
+    <div class="audio-container">
+        <audio id="audio-player" class="audio-player" preload="auto">
+            <source src="audio/Qeenoftears.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <div class="diviframe">
+        <iframe src="topperproject2.html" class="iframe" title="사진 보러가기"></iframe>
+        <br>
+        <a href="topperproject2.html" class="link">사진 보러가기</a>
+    </div>
+
+    <p class="imgp">"세기의 결혼이라고들 했죠"</p>
+
+    <div class="picturer">
+        <img src="images/qween1.png" alt="Qween Image" class="left-img">
+    </div>
+
+    <div class="textimgcontainer">
+        <div class="text">
+            <p class="line1">대한민국 최고 재벌 딸과</p>
+            <p class="line2">신입사원의 결혼이라니.</p>
+        </div>
+
+        <div class="picturer2">
+            <img src="images/qween2.png" alt="Qween Image" class="left-img">
+        </div>
+        <div class="text2">
+            <hr>
+            <br>
+            <p>"결혼은 여름밤에 에어컨 트는거랑 같다는데,</p>
+            <p>내가 원하는 온도랑 안 맞아서."</p>
+            <p>“나 그래서 이혼 하려고.”</p>
+            <p class="line5">눈물의 여왕 中</p>
+        </div>
+    </div>
+    <br>
+    <img src="images/sadqweenoftears.png">
+
+
+    <h1>다른 ost 듣기</h1>
+
+
+    <div class="gallery">
+        <!-- 첫 번째 -->
+        <div class="container">
+            <img src="images/stopit_qweenost.png" alt="첫 번째 이미지" id="playMusic1">
+            <div class="p">
+                <p>
+                <h1>멈춰줘 - 헤이즈</h1><br>
+                필연적으로 사랑은 애정과 증오를 동반한다<br>
+                종종 이 사실은 비극처럼 느껴지기도 하지만 <br>
+                불을 껴안은 얼음처럼, 결말을 안다 해도<br>
+                그 사랑을 멈출 수는 없었을 것 같다<br><br>
+                Inevitably, love carries affection <br>
+                and hate. Sometimes this fact feels tragic,<br>
+                like fire that hugs ice, even knowing the ending of the <br>
+                story, the love will not stop.</p>
+
+            </div>
+            <audio id="music1" src="audio/stopit.mp3"></audio>
+        </div>
+        <!-- 두 번째 -->
+        <div class="container">
+            <img src="images/amibroken_qweenost.png" alt="두 번째 이미지" id="playMusic2">
+            <div class="p">
+                <p>
+                <h1>고장난걸까 - 10cm</h1><br>
+                사랑은 보이지도, 들리지도, 손에 잡히지도 않기에,<br>
+                이를 표혀나는 일은 종종 고장이라도 난 듯이 어설프고<br>
+                자주 의도를 빗나간다. 하지만 가끔은 그렇게 터무니 없고<br>
+                무모해 보이는 말과 행동이, 자신도 모르는 새에 기적을 <br>
+                일으키기도 하는 법이다 <br><br>
+                love is that we can't see, can't hear, <br>
+                and can't touch so to express hard and <br>
+                Difficult to convey the point but sometimes<br>
+                makes miracle that i don't know to saying
+                </p>
+            </div>
+            <audio id="music2" src="audio/amibroken.mp3"></audio>
+        </div>
+        <!-- 세 번째 -->
+        <div class="container">
+            <img src="images/imsorryihateyouiloveu_qweenost.png" alt="세 번째 이미지" id="playMusic3">
+            <div class="p">
+                <p>
+                <h1>미안해 미워해 사랑해 - crush</h1><br>
+                "왜 하필 이때가 떠올랐을까 만약 여기서 내가 ,<br>
+                죽는다면, 마지막 순간에 네 생각을 하는걸까?"<br>
+                <br><br>
+                "Why isn't this day? If i die here, <br>
+                think of me at the last moment?"
+                </p>
+
+            </div>
+            <audio id="music3" src="audio/imsorryihateyouiloveu.mp3"></audio>
+        </div>
+        <!-- 네 번째 -->
+        <div class="container">
+            <img src="images/diary_qweenost.png" alt="네 번째 이미지" id="playMusic4">
+            <div class="p">
+                <p>
+                <h1>일기 - 김나영</h1><br>
+                일기를 통해 우리는 지나간 기억을 더욱 선명하게 인화한다.<br>
+                기억을 되감으며 그때는 보지 못했던 것들을 새롭게 발견하기도 하고, <br>
+                감추었기에 진솔했던 감정들과 마주하기도 한다. <br>
+                대답 없는 고백, 가닿지 못한 진심 같은 것들.<br><br>
+
+                Through our diaries, we print our past<br>
+                memories more clearly.<br>
+                I rewind my memories and discover<br>
+                new things that I didn't see then,<br>
+                They also face honest feelings <br>
+                because they hide them.<br>
+                Confessions without answers, <br>
+                things like heart that couldn't be reached.<br>
+                </p>
+
+            </div>
+            <audio id="music4" src="audio/diary.mp3"></audio>
+        </div>
+        <!-- 다섯 번째 -->
+        <div class="container">
+            <img src="images/willumarryme_qweenost.png" alt="다섯 번째 이미지" id="playMusic5">
+            <div class="p">
+                <p>
+                <h1>청혼 - 김수현</h1><br>
+                타오르는 석양처럼 충만한 기쁨 속에서<br>
+                어떤 슬픔도, 눈물도 들어올 수 없는 곳으로 <br>
+                다정하게 손을 맞잡고 걸어 갈 것이다. <br>
+                "집에 가자"
+                <br><br>
+                like a burning loverm we will stand<br>
+                affectionately holding hands and go<br>
+                to a place where neither sadness nor <br>
+                tears can add to the sorrow.<br>
+                "Let's go home"
+                </p>
+
+            </div>
+            <audio id="music5" src="audio/willumarryme.mp3"></audio>
+        </div>
+    </div>
+
+
+    <div class="poster">
+        <img src="images/qeenposter.jpg" class="posterimg">
+        <div class="logo">
+            <a href="https://www.netflix.com/kr/title/81707950" target="_blank">
+                <img src="images/netflix.png" class="netflix">
+            </a>
+            <a href="https://www.tving.com/contents/P001753352" target="_blank">
+                <img src="images/TVING.png" class="tving">
+            </a>
+        </div>
+
+    </div>
+
+    <script>
+        // 메인 OST 재생
+        document.querySelector('.button').addEventListener('click', function () {
+            const mainAudio = document.getElementById('audio-player');
+            mainAudio.play();
+        });
+
+        // 이미지 클릭 시 해당 OST 재생
+        function playAudio(audioIndex) {
+            const allAudios = document.querySelectorAll('audio');
+            // 모든 오디오 정지
+            allAudios.forEach(audio => {
+                audio.pause();
+                audio.currentTime = 0;
+            });
+            // 선택한 오디오 재생
+            const selectedAudio = document.getElementById(`audio${audioIndex}`);
+            if (selectedAudio) {
+                selectedAudio.play();
+            }
+        }
+
+        const containers = document.querySelectorAll('.container');
+
+        containers.forEach(container => {
+            const img = container.querySelector('img');
+            const audio = container.querySelector('audio');
+            const description = container.querySelector('.p');
+
+            img.addEventListener('click', () => {
+                // 다른 컨테이너 초기화
+                containers.forEach(c => {
+                    if (c !== container) {
+                        c.classList.remove('clicked');
+                        const otherAudio = c.querySelector('audio');
+                        otherAudio.pause();
+                        otherAudio.currentTime = 0;
+                    }
+                });
+
+                // 현재 컨테이너 상태 토글
+                container.classList.toggle('clicked');
+
+                // 오디오 재생/일시정지
+                if (container.classList.contains('clicked')) {
+                    audio.play();
+                } else {
+                    audio.pause();
+                    audio.currentTime = 0;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
