@@ -1,128 +1,157 @@
 body {
-    margin: 0;
-    border:10px;
-    height: 5000px;
-    background-color: #f8f5d6;
-    text-align: center;
-    font-family: 'Diphylleia', sans-serif; /* 기본 폰트 적용 */
-    scrollbar-color: #888 #f1f1f1; /* 손잡이와 트랙 색상 */
-    scrollbar-width: thin;         /* 스크롤바 두께 설정 */
+  margin: 0;
+  border: 10px;
+  height: 5000px;
+  background-color: #f8f5d6;
+  text-align: center;
+  font-family: 'Diphylleia', sans-serif;
+  /* 기본 폰트 적용 */
+  scrollbar-color: #888 #f1f1f1;
+  /* 손잡이와 트랙 색상 */
+  scrollbar-width: thin;
+  /* 스크롤바 두께 설정 */
 }
+
 section {
-  height: 900px; 
-  width: 100%; /* 너비를 화면 전체로 설정 */
+  height: 900px;
+  width: 100%;
+  /* 너비를 화면 전체로 설정 */
   background-image: url("images/seeumy19thlifemain.jpg");
-  background-size: cover; 
-  background-position: center; 
-  background-attachment: fixed; /* 배경 이미지 고정 */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  /* 배경 이미지 고정 */
 }
+
 button {
-    size: 300px;
-    display: block;
-    margin: 20px auto;
-    padding: 10px 30px;
-    background: linear-gradient(45deg, #797f26, #b4eeb4);
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    color: rgb(250, 255, 192);
-    font-size: 18px;
-    font-family: 'Gowun Batang', serif;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background 0.3s, transform 0.3s;
+  size: 300px;
+  display: block;
+  margin: 20px auto;
+  padding: 10px 30px;
+  background: linear-gradient(45deg, #797f26, #b4eeb4);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  color: rgb(250, 255, 192);
+  font-size: 18px;
+  font-family: 'Gowun Batang', serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s, transform 0.3s;
 }
 
 button:hover {
-    background: linear-gradient(45deg, rgb(121, 127, 38), #6b8e23);
-    transform: translateY(-3px);
+  background: linear-gradient(45deg, rgb(121, 127, 38), #6b8e23);
+  transform: translateY(-3px);
 }
 
 button:active {
-    transform: translateY(1px);
+  transform: translateY(1px);
 }
+
 .iframe {
-    width: 100%;
-    height: 500px;
-    border: none;
-    border-radius: 8px; /* 둥근 모서리 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 */
-    overflow: hidden; /* 내용이 테두리를 넘지 않게 */
-    background-color: #f9f9f9; /* 배경 색상 */
-    transition: transform 0.3s ease; /* 호버 효과를 위한 전환 */
-  }
+  width: 100%;
+  height: 500px;
+  border: none;
+  border-radius: 8px;
+  /* 둥근 모서리 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* 그림자 */
+  overflow: hidden;
+  /* 내용이 테두리를 넘지 않게 */
+  background-color: #f9f9f9;
+  /* 배경 색상 */
+  transition: transform 0.3s ease;
+  /* 호버 효과를 위한 전환 */
+}
+
 .iframe:hover {
-    transform: scale(1.02); /* 호버 시 확대 효과 */
-    border-color: #bbb; /* 호버 시 테두리 색상 변경 */
+  transform: scale(1.02);
+  /* 호버 시 확대 효과 */
+  border-color: #bbb;
+  /* 호버 시 테두리 색상 변경 */
 }
 
-  iframe::-webkit-scrollbar {
-    width: 12px; /* 스크롤바 너비 */
-  }
-  
-  iframe::-webkit-scrollbar-thumb {
-    background-color: darkgrey; /* 스크롤바 핸들 색상 */
-    border-radius: 10px; /* 스크롤바 핸들의 모서리를 둥글게 */
-  }
-  
-  iframe::-webkit-scrollbar-track {
-    background: #f1f1f1; /* 스크롤바 트랙 색상 */
-    border-radius: 10px;
-  }
-
-  .img1{
-    float: left;
-    padding-left: 10px;
-    padding-top: 50px;
-    width: 250px;
-    height: 350px;
-    border-radius: 25%;
-  }
-  .img2{
-    float: right;
-    padding-right: 60px;
-    padding-top: 50px;
-    width: 250px;
-    height: 350px;
-    border-radius: 25%;
-  }
-  
-  .text{
-    color:#797f26;
-  }
-
-  .text_container{
-    padding-top: 75px;
-  }
-
-  .slider__wrap {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.slider__img {  /* 이미지가 보이는 영역 */
-    position: relative;
-    width: 800px;
-    height: 450px;
-    overflow: hidden;
-}
-.slider__inner {    /* 이미지 움직이는 영역 */
-    display: flex;
-    flex-wrap: wrap;
-    width: 4800px;  /* 총 이미지 영역 */
-    height: 450px;
-}
-.slider {   /* 개별적인 이미지 */
-    position: relative;
-    width: 800px;
-    height: 450px;
+iframe::-webkit-scrollbar {
+  width: 12px;
+  /* 스크롤바 너비 */
 }
 
-.textp{
+iframe::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  /* 스크롤바 핸들 색상 */
+  border-radius: 10px;
+  /* 스크롤바 핸들의 모서리를 둥글게 */
+}
+
+iframe::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  /* 스크롤바 트랙 색상 */
+  border-radius: 10px;
+}
+
+.img1 {
+  float: left;
+  padding-left: 10px;
+  padding-top: 50px;
+  width: 250px;
+  height: 350px;
+  border-radius: 25%;
+}
+
+.img2 {
+  float: right;
+  padding-right: 60px;
+  padding-top: 50px;
+  width: 250px;
+  height: 350px;
+  border-radius: 25%;
+}
+
+.text {
+  color: #797f26;
+}
+
+.text_container {
+  padding-top: 75px;
+}
+
+.slider__wrap {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider__img {
+  /* 이미지가 보이는 영역 */
+  position: relative;
+  width: 800px;
+  height: 450px;
+  overflow: hidden;
+}
+
+.slider__inner {
+  /* 이미지 움직이는 영역 */
+  display: flex;
+  flex-wrap: wrap;
+  width: 4800px;
+  /* 총 이미지 영역 */
+  height: 450px;
+}
+
+.slider {
+  /* 개별적인 이미지 */
+  position: relative;
+  width: 800px;
+  height: 450px;
+}
+
+.textp {
   font-size: 10px;
 }
-.textp1{
+
+.textp1 {
   font-size: 12px;
 }
 
@@ -160,7 +189,8 @@ button:active {
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
   max-width: 500px;
-  background-color: #fff;
+  background-color: #f8f5d6;
+  color:#6b8e23;
   padding: 10px;
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -169,10 +199,15 @@ button:active {
   line-height: 1.4;
   position: absolute;
   top: 300px;
-  width: 400px;
+  width: 250px;
   left: 250px;
+  margin-top: 20px;
 }
 
 .container.clicked .p {
   opacity: 1;
+}
+
+.titleh{
+  color: #6b8e23;
 }
